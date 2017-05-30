@@ -16,5 +16,9 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return animationDuration
     }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        //
+    }
 
 }
