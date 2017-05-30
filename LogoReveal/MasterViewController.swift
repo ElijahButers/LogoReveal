@@ -59,3 +59,7 @@ class MasterViewController: UIViewController {
   }
   
 }
+
+extension MasterViewController: UINavigationControllerDelegate {
+    
+}
