@@ -30,6 +30,7 @@ func delay(seconds: Double, completion: @escaping ()-> Void) {
 class MasterViewController: UIViewController {
   
   let logo = RWLogoLayer.logoLayer()
+    let transition = RevealAnimator()
   
   override func viewDidLoad() {
     super.viewDidLoad()
