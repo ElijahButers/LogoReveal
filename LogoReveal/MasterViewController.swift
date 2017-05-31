@@ -34,6 +34,7 @@ class MasterViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Start"
+    navigationController?.delegate = self
     
   }
   
