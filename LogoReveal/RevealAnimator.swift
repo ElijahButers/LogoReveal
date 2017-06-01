@@ -12,6 +12,7 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     let animationDuration = 2.0
     var operation: UINavigationControllerOperation = .push
+    weak var storedContext: UIViewControllerContextTransitioning?
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return animationDuration
