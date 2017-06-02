@@ -21,6 +21,8 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         //
         storedContext = transitionContext
+        let fromVC = transitionContext.viewController(forKey: .from) as! MasterViewController
+        let toVC = transitionContext.viewController(forKey: .to) as! DetailViewController
     }
 
 }
