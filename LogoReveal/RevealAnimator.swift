@@ -20,6 +20,7 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         //
+        storedContext = transitionContext
     }
 
 }
