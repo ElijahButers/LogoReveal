@@ -23,6 +23,8 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         storedContext = transitionContext
         let fromVC = transitionContext.viewController(forKey: .from) as! MasterViewController
         let toVC = transitionContext.viewController(forKey: .to) as! DetailViewController
+        transitionContext.containerView.addSubview(toVC.view)
+        toVC.view.frame = transitionContext.finalFrame(for: toVC)
     }
 
 }
