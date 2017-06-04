@@ -29,6 +29,11 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let animation = CABasicAnimation(keyPath: "transform")
         animation.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
         animation.toValue = NSValue(caTransform3D: CATransform3DConcat(CATransform3DMakeTranslation(0.0, -10.0, 0.0), CATransform3DMakeScale(150.0, 150.0, 1.0)))
+        animation.duration = animationDuration
+        animation.delegate = self
+        animation.fillMode = kCAFillModeForwards
+        animation.isRemovedOnCompletion = false
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
     }
 
 }
