@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimationDelegate {
     
     let animationDuration = 2.0
     var operation: UINavigationControllerOperation = .push
