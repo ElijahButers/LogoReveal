@@ -34,6 +34,11 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        
+        let maskLayer: CAShapeLayer = RWLogoLayer.logoLayer()
+        maskLayer.position = fromVC.logo.position
+        toVC.view.layer.mask = maskLayer
+        maskLayer.add(animation, forKey: nil)
     }
 
 }
