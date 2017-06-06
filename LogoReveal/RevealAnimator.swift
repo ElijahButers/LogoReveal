@@ -39,6 +39,7 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
         maskLayer.position = fromVC.logo.position
         toVC.view.layer.mask = maskLayer
         maskLayer.add(animation, forKey: nil)
+        fromVC.logo.add(animation, forKey: nil)
     }
 
 }
