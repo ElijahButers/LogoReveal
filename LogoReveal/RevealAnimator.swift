@@ -41,5 +41,9 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
         maskLayer.add(animation, forKey: nil)
         fromVC.logo.add(animation, forKey: nil)
     }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+    }
 
 }
