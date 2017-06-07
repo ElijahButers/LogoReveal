@@ -44,6 +44,11 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         
+        if let context = storedContext {
+            context.completeTransition(!context.transitionWasCancelled)
+            // reset logo
+        }
+        storedContext = nil
     }
 
 }
