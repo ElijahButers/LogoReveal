@@ -49,6 +49,8 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
             // reset logo
             let fromVC = context.viewController(forKey: .from) as! MasterViewController
             fromVC.logo.removeAllAnimations()
+            let toVC = context.viewController(forKey: .to) as! DetailViewController
+            toVC.view.layer.mask = nil
         }
         storedContext = nil
     }
