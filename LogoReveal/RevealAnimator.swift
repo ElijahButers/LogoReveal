@@ -21,6 +21,9 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         //
         storedContext = transitionContext
+        
+        if operation == .push {
+        
         let fromVC = transitionContext.viewController(forKey: .from) as! MasterViewController
         let toVC = transitionContext.viewController(forKey: .to) as! DetailViewController
         transitionContext.containerView.addSubview(toVC.view)
@@ -40,6 +43,7 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
         toVC.view.layer.mask = maskLayer
         maskLayer.add(animation, forKey: nil)
         fromVC.logo.add(animation, forKey: nil)
+        }
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
