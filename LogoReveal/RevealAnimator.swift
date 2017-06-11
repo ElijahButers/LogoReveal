@@ -49,6 +49,17 @@ class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimati
         fadeIn.toValue = 1.0
         fadeIn.duration = animationDuration
         toVC.view.layer.add(fadeIn, forKey: nil)
+        } else {
+            
+            let fromView = transitionContext.view(forKey: .from)!
+            let toView = transitionContext.view(forKey: .to)!
+            
+            transitionContext.containerView.insertSubview(toView, belowSubview: fromView)
+            UIView.animate(withDuration: animationDuration, delay: 0.0, options: .curveEaseIn, animations: {
+                fromView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            }, completion: { _ in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            })
         }
     }
     
