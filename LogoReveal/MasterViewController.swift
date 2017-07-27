@@ -59,6 +59,10 @@ class MasterViewController: UIViewController {
   func didTap() {
     performSegue(withIdentifier: "details", sender: nil)
   }
+    
+    func didPan() {
+        
+    }
   
 }
 
