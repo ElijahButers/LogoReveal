@@ -76,5 +76,10 @@ class RevealAnimator: UIPercentDrivenInteractiveTransition, UIViewControllerAnim
         }
         storedContext = nil
     }
+    
+    // pan handler
+    func handlePan(recognizer: UIPanGestureRecognizer) {
+        
+    }
 
 }
