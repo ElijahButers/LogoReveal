@@ -73,4 +73,12 @@ extension MasterViewController: UINavigationControllerDelegate {
         transition.operation = operation
         return transition
     }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        if !transition.interactive {
+            return nil
+        }
+        return transition
+    }
 }
