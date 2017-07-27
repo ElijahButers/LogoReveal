@@ -8,11 +8,12 @@
 
 import UIKit
 
-class RevealAnimator: UIPercentDrivenInteractiveTransition, NSObject, UIViewControllerAnimatedTransitioning, CAAnimationDelegate {
+class RevealAnimator: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, CAAnimationDelegate {
     
     let animationDuration = 2.0
     var operation: UINavigationControllerOperation = .push
     weak var storedContext: UIViewControllerContextTransitioning?
+    var interactive = false
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return animationDuration
