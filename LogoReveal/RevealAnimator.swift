@@ -80,6 +80,9 @@ class RevealAnimator: UIPercentDrivenInteractiveTransition, UIViewControllerAnim
     // pan handler
     func handlePan(recognizer: UIPanGestureRecognizer) {
         
+        let translation = recognizer.translation(in: recognizer.view!.superview!)
+        var progress: CGFloat = abs(translation.x / 200.0)
+        progress = min(max(progress, 0.01), 0.99)
     }
 
 }
