@@ -60,8 +60,14 @@ class MasterViewController: UIViewController {
     performSegue(withIdentifier: "details", sender: nil)
   }
     
-    func didPan() {
-        
+    func didPan(recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            transition.interactive = true
+            performSegue(withIdentifier: "details", sender: nil)
+        default:
+            transition.handlePan(recognizer: recognizer)
+        }
     }
   
 }
