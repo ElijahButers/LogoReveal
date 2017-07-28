@@ -97,6 +97,7 @@ class RevealAnimator: UIPercentDrivenInteractiveTransition, UIViewControllerAnim
                 transitionLayer.speed = 1.0
                 finish()
             }
+            interactive = false
         default:
             break
         }
