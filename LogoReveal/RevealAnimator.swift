@@ -87,6 +87,16 @@ class RevealAnimator: UIPercentDrivenInteractiveTransition, UIViewControllerAnim
         switch recognizer.state {
         case .changed:
             update(progress)
+        case .cancelled, .ended :
+            let transitionLayer = storedContext!.containerView.layer
+            transitionLayer.beginTime = CACurrentMediaTime()
+            if progress < 0.5 {
+                cancel()
+                transitionLayer.speed = -1.0
+            } else {
+                transitionLayer.speed = 1.0
+                finish()
+            }
         default:
             break
         }
